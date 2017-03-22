@@ -1,14 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/header/header.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './core/header/header.component';
+import {LoginComponent} from './login/login.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
 import {AuthGuard} from "./shared/auth/auth.guard";
 import {AuthService} from "./shared/auth/auth.service";
 
@@ -32,4 +32,5 @@ import {AuthService} from "./shared/auth/auth.service";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
