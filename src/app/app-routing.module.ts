@@ -25,6 +25,11 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'contacts',
+    loadChildren: './contacts/contacts.module#ContactsModule',
+    canActivate: [AuthGuard]
+  },
 
   // otherwise redirect to
   {

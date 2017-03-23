@@ -4,8 +4,8 @@
     <li style="float:right"><a routerLink="/login">Login</a></li>
   </ul>
   <ul *ngIf="authService.hasValidToken()">
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="#">Contacts</a></li>
+    <li><a routerLink="/dashboard">Dashboard</a></li>
+    <li><a routerLink="/contacts">Contacts</a></li>
     <li style="float:right"><a href="#">Logout</a></li>
     <li style="float:right"><a href="#">User</a></li>
   </ul>
