@@ -22,10 +22,14 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.userName, this.password).subscribe(() => {
       if (this.authService.hasValidToken()) {
+        console.log('login: successful');
+
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
         let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/dashboard';
+
         // Redirect the user
+        console.log('login: redirect to ' + redirect);
         this.router.navigate([redirect]);
       }
     });
