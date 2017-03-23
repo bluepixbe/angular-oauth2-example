@@ -11,6 +11,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HomeComponent} from './home/home.component';
 import {AuthGuard} from "./shared/auth/auth.guard";
 import {AuthService} from "./shared/auth/auth.service";
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {AuthService} from "./shared/auth/auth.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OAuthModule.forRoot()
   ],
   providers: [
     AuthService,
