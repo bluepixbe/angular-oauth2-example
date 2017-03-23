@@ -1,0 +1,8 @@
+<ul class="collection">
+  <li class="collection-item avatar" *ngFor="let contact of contacts">
+    <a>
+      <img [src]="contact.image" alt="" class="circle">
+      <span class="title">{{contact.name}}</span>
+    </a>
+  </li>
+</ul>

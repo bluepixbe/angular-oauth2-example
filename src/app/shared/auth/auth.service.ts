@@ -31,6 +31,10 @@ export class AuthService {
     return hasAccessToken;
   }
 
+  getAccessToken() {
+    return this.oAuthService.getAccessToken();
+  }
+
   logout() {
     this.oAuthService.logOut();
   }
