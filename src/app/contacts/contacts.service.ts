@@ -13,6 +13,7 @@ export class ContactsService {
   constructor(private http: Http, private authService: AuthService) { }
 
   getContacts() {
+    this.authService.refreshToken();
     return this.contacts;
 
     // // add authorization header with jwt token

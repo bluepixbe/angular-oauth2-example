@@ -16,7 +16,7 @@ export class AuthService {
       return this.oAuthService.loadUserProfile();
     }).then(() => {
       // Using the loaded user data
-      let claims = this.oAuthService.getIdentityClaims();
+      let claims = this.getIdentityClaims();
       if (claims) console.debug('given_name', claims.given_name);
       return claims;
     }));
@@ -33,6 +33,16 @@ export class AuthService {
 
   getAccessToken() {
     return this.oAuthService.getAccessToken();
+  }
+
+  getIdentityClaims() {
+    return this.oAuthService.getIdentityClaims();
+  }
+
+  refreshToken() {
+    this.oAuthService.refreshToken().then(() => {
+      console.debug('authService.refreshToken: ok');
+    })
   }
 
   logout() {

@@ -9,6 +9,10 @@ import { OAuthService } from 'angular-oauth2-oidc';
 export class AppComponent {
 
   constructor(private oauthService: OAuthService) {
+
+    // URL of the SPA to redirect the user to after login
+    this.oauthService.redirectUri = "http://localhost:4200";
+
     // The SPA's id. Register SPA with this id at the auth-server
     this.oauthService.clientId = "demo-resource-owner";
 
