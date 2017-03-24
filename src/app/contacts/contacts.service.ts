@@ -7,21 +7,18 @@ import {AuthService} from "../shared/auth/auth.service";
 @Injectable()
 export class ContactsService {
 
-  //private API_ENDPOINT = 'http://localhost:8080/api';
-  private contacts: Array<Contact> = CONTACT_DATA;
+  private API_ENDPOINT = 'https://nodejs-rest-contacts.scapp.io/api/';
 
   constructor(private http: Http, private authService: AuthService) { }
 
   getContacts() {
     this.authService.refreshToken();
-    return this.contacts;
 
-    // // add authorization header with jwt token
-    // let headers = new Headers({ 'Authorization': 'Bearer ' + this.authService.getAccessToken()});
-    // let options = new RequestOptions({ headers: headers });
-    //
-    // return this.http.get(this.API_ENDPOINT + '/contacts', options)
-    //   .map((res:Response) => { return res.json(); })
-    //   .map((data) => { return data.items; });
+    // add authorization header
+    let headers = new Headers({ 'Authorization': 'Bearer ' + this.authService.getAccessToken()});
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.get(this.API_ENDPOINT + '/contacts', options)
+      .map((res:Response) => { return res.json(); });
   }
 }
