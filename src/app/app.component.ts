@@ -22,7 +22,7 @@ export class AppComponent {
 
     // Use setStorage to use sessionStorage or another implementation of the TS-type Storage
     // instead of localStorage
-    this.oauthService.setStorage(sessionStorage);
+    this.oauthService.setStorage(localStorage);
 
     // Set a dummy secret
     // Please note that the auth-server used here demand the client to transmit a client secret, although
