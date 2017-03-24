@@ -39,6 +39,11 @@ export class AuthService {
     return this.oAuthService.getIdentityClaims();
   }
 
+  getIdentityClaimsName() {
+    let claims = this.getIdentityClaims();
+    return claims ? claims.given_name + ' ' + claims.family_name : 'User';
+  }
+
   refreshToken() {
     this.oAuthService.refreshToken().then(() => {
       console.debug('authService.refreshToken: ok');

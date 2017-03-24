@@ -1,0 +1,8 @@
+---
+applications:
+- name: angular-oauth2-example
+  memory: 64M
+  instances: 2
+  domain: scapp.io
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+  path: dist
